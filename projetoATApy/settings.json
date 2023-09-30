@@ -1,0 +1,17 @@
+{
+    "workbench.colorTheme": "Just Black",
+    "window.zoomLevel": 0,
+    "explorer.confirmDelete": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "liveServer.settings.donotVerifyTags": true,
+    "explorer.confirmDragAndDrop": false,
+    "editor.fontSize": 20,
+    "editor.lineHeight": 28,
+    "workbench.iconTheme": "material-icon-theme",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "workbench.statusBar.visible": false,
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.colorCustomizations": {
+        "editorLineNumber.foreground": "#ffffff"
+}
