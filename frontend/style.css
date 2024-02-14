@@ -1,67 +1,53 @@
 
-header {          
+header{          
     background-color: #333;  
     color: #fff;        
     padding: 35px;  
     text-align: top;   
+}
+
+body{
+    background: url(atabackground.jpg);
+    background-size: cover;
+}
+
+*{ 
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'inter', sans-serif;
-    }
-    
-    
-    
-    *{ 
-        margin: 0; 
-        padding: 0;
-        box-sizing: border-box;
-      
-    }
+}
 
+nav{
+    display: inline-block;
+}
 
+nav li{
+    display: inline-block;
+    padding: 15px;
+}   
 
+nav li a{
+    color: rgb(248, 6, 6);
+    text-decoration: none;
+    padding: 1;
+}
 
-    nav{
-        
-    
-        display: inline-block;
-    }
+nav li a:hover{
+    background-color: rgb(0, 0, 0);
+}
 
-    nav li{
-        display: inline-block;
-        padding: 15px;
-    }               
+.dropdown-menu{
+    position: absolute;
+    box-shadow: 0 0 2px rgb(0, 0, 0);
+    display: none;
+    background-color: rgb(255, 255, 255);
+}
 
-
-
-    nav li a{
-        color: rgb(248, 6, 6);
-        text-decoration: none;
-        padding: 1;
-    }
-
-    nav li a:hover{
-        background-color: rgb(0, 0, 0);
-    }
-
-    
-
-    .dropdown-menu{
-        position: absolute;
-        box-shadow: 0 0 2px rgb(0, 0, 0);
-        display: none;
-        background-color: rgb(255, 255, 255);
-    }
-
-
-
-    .dropdown-menu a{
-        display: block;
-        color: rgb(0, 0, 0);
-
-    }
-
-    .dropdown:hover .dropdown-menu{
-        display: block;
-    }
-
-
-    
+.dropdown-menu a{
+    display: block;
+    color: rgb(255, 0, 0);
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
