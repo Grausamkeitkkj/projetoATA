@@ -6,11 +6,6 @@ header{
     text-align: top;   
 }
 
-body{
-    background: url(atabackground.jpg);
-    background-size: cover;
-}
-
 *{ 
     margin: 0; 
     padding: 0;
