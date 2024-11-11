@@ -1,192 +1,175 @@
+*{
+    box-sizing: border-box; 
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
 body, html{
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f1f1f1; /* Fundo cinza claro */
-    color: #000000; /* Texto preto */
+    background-color: #f1f1f1;
+    color: #000000; 
 }
 
 .menu {
-    list-style-type: none; /* Remove os marcadores de lista */
-    margin: 0; /* Remove a margem padr�o */
-    padding: 0; /* Remove o preenchimento padr�o */
-    background-color: #003366; /* Define a cor de fundo como cinza escuro */
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #003366; 
 }
 
 .menu > li {
-    display: inline-block; /* Exibe os itens da lista em linha */
-    position: relative; /* Define a posi��o relativa para permitir o posicionamento absoluto dos submenus */
+    display: inline-block; 
+    position: relative; 
 }
 
 .menu > li > a {
-    display: block; /* Exibe o link como um bloco */
-    color: white; /* Define a cor do texto como branco */
-    text-align: center; /* Centraliza o texto */
-    padding: 14px 16px; /* Adiciona preenchimento ao redor do texto */
-    text-decoration: none; /* Remove a sublinha dos links */
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 .menu > li:hover {
-    background-color: black; /* Altera a cor de fundo ao passar o mouse */
+    background-color: black;
 }
 
 .submenu-items {
-    display: none; /* Esconde os itens do submenu por padr�o */
-    position: absolute; /* Posiciona os submenus de forma absoluta em rela��o ao item pai */
-    background-color: black; /* Define a cor de fundo como cinza escuro */
-    list-style-type: none; /* Remove os marcadores de lista */
-    margin: 0; /* Remove a margem padr�o */
-    padding: 0; /* Remove o preenchimento padr�o */
-    min-width: 160px; /* Define a largura m�nima do submenu */
-    z-index: 1; /* Garante que o submenu fique acima de outros elementos */
+    display: none;
+    position: absolute;
+    background-color: black;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    min-width: 160px;
+    z-index: 1;
 }
 
 .submenu-items > li > a {
-    color: white; /* Define a cor do texto como branco */
-    padding: 12px 16px; /* Adiciona preenchimento ao redor do texto */
-    text-decoration: none; /* Remove a sublinha dos links */
-    display: block; /* Exibe o link como um bloco */
-    text-align: left; /* Alinha o texto � esquerda */
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
 }
 
 .submenu-items > li > a:hover {
-    background-color: black; /* Altera a cor de fundo ao passar o mouse */
+    background-color: black;
 }
 
 .submenu:hover .submenu-items {
-    display: block; /* Exibe os itens do submenu ao passar o mouse sobre o item pai */
+    display: block;
 }
 
 .form-experimental {
-    max-width: 600px; /* Define a largura m�xima do formul�rio */
-    margin: 0 auto; /* Centraliza o formul�rio horizontalmente */
-    position: relative; /* Define a posi��o relativa para o formul�rio */
-    padding: 20px; /* Adiciona um preenchimento interno de 20px */
-    border: 1px solid #ccc; /* Adiciona uma borda s�lida de 1px com cor cinza clara */
-    border-radius: 10px; /* Arredonda os cantos da borda em 10px */
-    background-color: #f9f9f9; /* Define a cor de fundo do formul�rio */
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
 .form-label {
-    display: block; /* Exibe o r�tulo como um bloco */
-    margin-bottom: 8px; /* Adiciona uma margem inferior de 8px */
-    font-weight: bold; /* Define o peso da fonte como negrito */
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
 }
 
 .form-input,
 .form-textarea {
-    width: 100%; /* Define a largura como 100% do elemento pai */
-    padding: 10px; /* Adiciona um preenchimento interno de 10px */
-    margin-bottom: 20px; /* Adiciona uma margem inferior de 20px */
-    border: 1px solid #ccc; /* Adiciona uma borda s�lida de 1px com cor cinza clara */
-    border-radius: 5px; /* Arredonda os cantos da borda em 5px */
-    box-sizing: border-box; /* Inclui o preenchimento e a borda na largura e altura total do elemento */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .form-input:focus,
 .form-textarea:focus {
-    border-color: #007bff; /* Muda a cor da borda para azul quando o elemento est� em foco */
-    outline: none; /* Remove o contorno padr�o do navegador */
+    border-color: #007bff;
+    outline: none;
 }
 
 .form-button {
-    display: inline-block; /* Exibe o bot�o como um bloco inline */
-    padding: 10px 20px; /* Adiciona um preenchimento interno de 10px verticalmente e 20px horizontalmente */
-    font-size: 16px; /* Define o tamanho da fonte como 16px */
-    color: #fff; /* Define a cor do texto como branco */
-    background-color: #007bff; /* Define a cor de fundo do bot�o como azul */
-    border: none; /* Remove qualquer borda do bot�o */
-    border-radius: 5px; /* Arredonda os cantos da borda em 5px */
-    cursor: pointer; /* Muda o cursor para um ponteiro quando sobre o bot�o */
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .form-button:hover {
-    background-color: #0056b3; /* Muda a cor de fundo do bot�o para um azul mais escuro quando o bot�o � hover */
+    background-color: #0056b3;
 }
 
 .form-titulo {
-    position: relative; /* Define a posi��o relativa para o t�tulo */
-    text-align: center; /* Centraliza o t�tulo horizontalmente */
+    position: relative;
+    text-align: center;
 }
 
-.titulo-experimental{
+.titulo{
     left: 150px;
     position: relative; 
 }
 
-.container-table {
-    position: relative;
-    left: 40px;
-    width: 40%; /* Define a largura como 50% do elemento pai */
-    overflow-x: auto; /* Adiciona uma barra de rolagem horizontal se o conteúdo exceder a largura do contêiner */
-    padding: 10px; /* Adiciona um preenchimento interno */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao contêiner */
-    border-radius: 10px; /* Arredonda os cantos do contêiner */
-}
-
-.table-experimental {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra à tabela */
-    border-radius: 10px; /* Arredonda os cantos da tabela */
-    overflow: hidden; /* Garante que o arredondamento dos cantos seja aplicado corretamente */
-}
-
-.table-experimental thead tr {
-    background-color: #003366; /* Azul escuro */
-    color: #ffffff; /* Texto branco */
-    text-align: left; /* Alinha o texto à esquerda */
-    font-weight: bold; /* Define o peso da fonte como negrito */
-}
-
-.table-experimental th,
-.table-experimental td {
-    padding: 12px 15px; /* Adiciona um preenchimento interno de 12px verticalmente e 15px horizontalmente */
-    border: 1px solid #dddddd; /* Adiciona uma borda sólida de 1px com cor cinza clara */
-}
-
-.table-experimental tbody tr {
-    border-bottom: 1px solid #dddddd; /* Adiciona uma borda inferior sólida de 1px com cor cinza clara */
-    transition: background-color 0.3s; /* Adiciona uma transição suave para a cor de fundo */
-}
-
-.table-experimental tbody tr:hover {
-    background-color: #f1f1f1; /* Muda a cor de fundo quando o mouse está sobre a linha */
-}
-
-.table-experimental tbody tr:last-of-type {
-    border-bottom: 2px solid #003366; /* Adiciona uma borda inferior sólida de 2px com cor vermelha na última linha */
+.table-header-blue th {
+    background-color: #003366 !important;
+    color: #fff !important;
 }
 
 .header {
-    background-color: #003366; /* Azul escuro */
-    color: #ffffff; /* Texto branco */
+    background-color: #003366;
+    color: #ffffff;
     padding: 20px;
     text-align: center;
 }
 
 .navbar {
-    background-color: #003366; /* Vermelho */
+    background-color: #003366;
     overflow: hidden;
 }
 
 .navbar a {
     float: left;
     display: block;
-    color: #ffffff; /* Texto branco */
+    color: #ffffff;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
 }
 
 .navbar a:hover {
-    background-color: #003366; /* Azul escuro */
-    color: #ffffff; /* Texto branco */
+    background-color: #003366;
+    color: #ffffff;
 }
 
-.container {
-    padding: 20px;
+.box-shadow{
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container-menu{
+    background-color: #003366;
+    width: 100vw;
+    display: flex;
 }
