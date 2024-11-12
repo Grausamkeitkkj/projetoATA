@@ -63,7 +63,7 @@ $result = $alunoExperimental->getExperimental();
                             <tr>
                                 <th>Horário</th>
                                 <th>Nível</th>
-                                <th>Coluna 3</th>
+                                <th>Quantidade de Alunos</th>
                             </tr>
                         </thead>
                         <tbody>

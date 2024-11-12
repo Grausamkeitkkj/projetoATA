@@ -1,0 +1,93 @@
+<?php
+require_once("funcoes_uteis.php");
+require_once("form_experimental.php");
+$alunoExperimental = new alunoExperimental();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./multiselect/bootstrap-multiselect.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="main-content">
+    <?php require_once("menu.php"); ?>
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
+        <div class="box-shadow">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <h1 class="form-titulo">Cadastro de Aula</h1>
+                    <form class="form-experimental" method="post" action="form_aula.php">
+                        <div class="form-group">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
+                                <label for="horario" class="form-label">Horário</label>
+                                <input type="time" id="horario" name="horario" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
+                                <label for="nivel" class="form-label">Nível</label>
+                                <select id="nivel" name="nivel" class="form-input">
+                                    <option value="">Selecione o nível</option>
+                                    <option value="1">Tiger</option>
+                                    <option value="2">Adolescente</option>
+                                    <option value="3">Adulto</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
+                                <label class="form-label">Dias da semana</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="segunda" name="dias[]" value="segunda">
+                                    <label class="form-check-label" for="segunda">Segunda-feira</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terca" name="dias[]" value="terca">
+                                    <label class="form-check-label" for="terca">Terça-feira</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="quarta" name="dias[]" value="quarta">
+                                    <label class="form-check-label" for="quarta">Quarta-feira</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="quinta" name="dias[]" value="quinta">
+                                    <label class="form-check-label" for="quinta">Quinta-feira</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sexta" name="dias[]" value="sexta">
+                                    <label class="form-check-label" for="sexta">Sexta-feira</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="sabado" name="dias[]" value="sabado">
+                                    <label class="form-check-label" for="sabado">Sábado</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="domingo" name="dias[]" value="domingo">
+                                    <label class="form-check-label" for="domingo">Domingo</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/menu.js"></script>
+    <!-- Inclua a biblioteca jQuery Mask Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#telefone').mask('(00) 00000-0000');
+        });
+    </script>
+</html>

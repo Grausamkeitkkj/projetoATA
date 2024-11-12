@@ -5,6 +5,7 @@
             <a href="#">Cadastro</a>
             <ul class="submenu-items">
                 <li><a href="experimental.php">Experimental</a></li>
+                <li><a href="aula.php">Aula</a></li>
                 <li><a href="#">Aluno</a></li>
                 <li><a href="#">Professor</a></li>
                 <li><a href="#">Responsável</a></li>
