@@ -7,12 +7,12 @@ class aula{
     function addAula($dados){
         global $mysqli;
 
-        $stmt = $mysqli->prepare("INSERT INTO aula (horario, nivel, dias_semana")
+        $stmt = $mysqli->prepare("INSERT INTO aula (horario, nivel, dia_da_semana) VALUES (?, ?, ?)");
         if ($stmt === false) {
             die($mysqli->error);
         }
 
-        $stmt->bind_param('sss', $dados['horario'], $dados['nivel'], $dados['dias_semana']);
+        $stmt->bind_param('sii', $dados['horario'], $dados['nivel'], $dados['dia_da_semana']);
 
         if (!$stmt->execute()) {
             die($stmt->error);
@@ -24,7 +24,7 @@ class aula{
     function getAula(){
         global $mysqli;
 
-        $stmt = $mysqli->prepare("SELECT horario, nivel, dias_semana FROM aula WHERE dias_semana > CURDATE() ORDER BY dias_semana ASC");
+        $stmt = $mysqli->prepare("SELECT horario, nivel, dia_da_semana FROM aula WHERE dia_da_semana > CURDATE() ORDER BY dia_da_semana ASC");
         if ($stmt === false) {
             die($mysqli->error);
         }
