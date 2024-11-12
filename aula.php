@@ -1,7 +1,5 @@
 <?php
-require_once("funcoes_uteis.php");
-require_once("form_experimental.php");
-$alunoExperimental = new alunoExperimental();
+require_once("form_aula.php")
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +68,11 @@ $alunoExperimental = new alunoExperimental();
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="domingo" name="dias[]" value="domingo">
                                     <label class="form-check-label" for="domingo">Domingo</label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid pt-3">
+                                        <input type="submit" value="Cadastrar" class="form-button btn-sm">
+                                    </div>
                                 </div>
                             </div>
                         </div>
