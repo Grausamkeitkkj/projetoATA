@@ -43,32 +43,32 @@ require_once("form_aula.php")
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
                                 <label class="form-label">Dias da semana</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="segunda" name="dia_da_semana[]" value="1">
+                                    <input class="form-check-input" type="checkbox" id="domingo" name="dia_da_semana[]" value="1">
+                                    <label class="form-check-label" for="domingo">Domingo</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="segunda" name="dia_da_semana[]" value="2">
                                     <label class="form-check-label" for="segunda">Segunda-feira</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="terca" name="dia_da_semana[]" value="2">
+                                    <input class="form-check-input" type="checkbox" id="terca" name="dia_da_semana[]" value="4">
                                     <label class="form-check-label" for="terca">Terça-feira</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="quarta" name="dia_da_semana[]" value="4">
+                                    <input class="form-check-input" type="checkbox" id="quarta" name="dia_da_semana[]" value="8">
                                     <label class="form-check-label" for="quarta">Quarta-feira</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="quinta" name="dia_da_semana[]" value="8">
+                                    <input class="form-check-input" type="checkbox" id="quinta" name="dia_da_semana[]" value="16">
                                     <label class="form-check-label" for="quinta">Quinta-feira</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="sexta" name="dia_da_semana[]" value="16">
+                                    <input class="form-check-input" type="checkbox" id="sexta" name="dia_da_semana[]" value="32">
                                     <label class="form-check-label" for="sexta">Sexta-feira</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="sabado" name="dia_da_semana[]" value="32">
+                                    <input class="form-check-input" type="checkbox" id="sabado" name="dia_da_semana[]" value="64">
                                     <label class="form-check-label" for="sabado">Sábado</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="domingo" name="dia_da_semana[]" value="64">
-                                    <label class="form-check-label" for="domingo">Domingo</label>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid pt-3">

@@ -1,9 +1,17 @@
 <?php
 require_once("./class/class_aluno_experimental.php");
+require_once("./class/class_aula.php");
 require_once("funcoes_uteis.php");
 require_once("form_experimental.php");
+
 $alunoExperimental = new alunoExperimental();
-$result = $alunoExperimental->getExperimental();
+$resultAluno = $alunoExperimental->getExperimental();
+
+$aula = new aula();
+$resultAula = $aula->getAulaHoje();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +44,7 @@ $result = $alunoExperimental->getExperimental();
                         </thead>
                         <tbody id="table-body">
                             <?php
-                            while ($row = $result->fetch_assoc()) {
+                            while ($row = $resultAluno->fetch_assoc()) {
                                 if ($row['nivel'] == 1) {
                                     $row['nivel'] = 'Tiger';
                                 } elseif ($row['nivel'] == 2) {
@@ -63,11 +71,24 @@ $result = $alunoExperimental->getExperimental();
                             <tr>
                                 <th>Horário</th>
                                 <th>Nível</th>
-                                <th>Quantidade de Alunos</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <!-- Adicione aqui as linhas da nova tabela -->
+                        <tbody id="table-body">
+                            <?php
+                                while ($row = $resultAula->fetch_assoc()){
+                                    if ($row['nivel'] == 1) {
+                                        $row['nivel'] = 'Tiger';
+                                    } elseif ($row['nivel'] == 2) {
+                                        $row['nivel'] = 'Adolescente';
+                                    } else {
+                                        $row['nivel'] = 'Adulto';
+                                    }
+                                    echo "<tr>";
+                                    echo "<td>" . htmlspecialchars($row['horario']) . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['nivel']) . "</td>";
+                                    echo "</tr>";
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>

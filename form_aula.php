@@ -20,12 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dados["dia_da_semana"] = array_sum($dados["dia_da_semana"]);
     }
 
-    //echo "<pre>";
-    //print_r($dados);
-    //echo "</pre>";
-    //exit;
+    #echo "<pre>";
+    #print_r($dados);
+    #echo "</pre>";
+    #exit;
 
     $aula->addAula($dados);
     header("Location: aula.php");
-    
 }
