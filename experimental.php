@@ -9,6 +9,7 @@ $alunoExperimental = new alunoExperimental();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
@@ -18,7 +19,7 @@ $alunoExperimental = new alunoExperimental();
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
         <div class="box-shadow">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <h1 class="form-titulo">Cadastro Rápido de Aula Experimental</h1>
                     <form class="form-experimental" method="post" action="form_experimental.php">
                         <div class="form-group">
