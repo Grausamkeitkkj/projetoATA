@@ -30,13 +30,7 @@ $alunoExperimental = new alunoExperimental();
                         </div>
                         <div class="form-group">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
-                                <label for="idade" class="form-label">Idade</label>
-                                <input type="number" id="idade" name="idade" placeholder="Idade" class="form-input" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
-                                <label for="data" class="form-label">Data</label>
+                                <label for="data" class="form-label">Data de Nascimento</label>
                                 <input type="date" id="data" name="data" class="form-input" required>
                             </div>
                         </div>

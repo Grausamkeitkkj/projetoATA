@@ -7,10 +7,6 @@ $aluno = new alunoExperimental();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dados = $_POST;
-    #echo "<pre>";
-    #print_r($dados);
-    #echo "</pre>";
-    #exit;
 
     $dados["telefone"] = limpa_texto($dados["telefone"]);
 
