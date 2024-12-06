@@ -18,8 +18,7 @@ CREATE TABLE IF NOT EXISTS aula (
 CREATE TABLE IF NOT EXISTS aluno (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
-    idade INT NOT NULL,
-    nivel INT,
+    idade DATE NOT NULL,
     telefone VARCHAR(20) NOT NULL,
     cpf VARCHAR(20) NOT NULL,
     data_inscricao DATE,

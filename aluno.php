@@ -30,8 +30,8 @@ $alunoExperimental = new alunoExperimental();
                         </div>
                         <div class="form-group">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
-                                <label for="data" class="form-label">Data de Nascimento</label>
-                                <input type="date" id="data" name="data" class="form-input" required>
+                                <label for="idade" class="form-label">Data de Nascimento</label>
+                                <input type="date" id="idade" name="idade" class="form-input" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -51,22 +51,22 @@ $alunoExperimental = new alunoExperimental();
                                 <label for="faixa" class="form-label">Faixa</label>
                                 <select type="number" id="faixa" name="faixa" class="form-input" required>
                                     <option value="">Selecione a faixa</option>
-                                    <option value="0">Branca</option>
-                                    <option value="1">Branca Decidida</option>
-                                    <option value="2">Amarela</option>
-                                    <option value="3">Amarela Decidida</option>
-                                    <option value="4">Laranja</option>
-                                    <option value="5">Laranja Decidida</option>
-                                    <option value="6">Verde</option>
-                                    <option value="7">Verde Decidida</option>
-                                    <option value="8">Azul</option>
-                                    <option value="9">Azul Decidida</option>
-                                    <option value="10">Roxa</option>
-                                    <option value="11">Roxa Decidida</option>
-                                    <option value="12">Marrom</option>
-                                    <option value="13">Marrom Decidida</option>
-                                    <option value="14">Preta</option>
-                                    <option value="15">Preta Decidida</option>
+                                    <option value="1">Branca</option>
+                                    <option value="2">Branca Decidida</option>
+                                    <option value="3">Amarela</option>
+                                    <option value="4">Amarela Decidida</option>
+                                    <option value="5">Laranja</option>
+                                    <option value="6">Laranja Decidida</option>
+                                    <option value="7">Verde</option>
+                                    <option value="8">Verde Decidida</option>
+                                    <option value="9">Azul</option>
+                                    <option value="10">Azul Decidida</option>
+                                    <option value="11">Roxa</option>
+                                    <option value="12">Roxa Decidida</option>
+                                    <option value="13">Marrom</option>
+                                    <option value="14">Marrom Decidida</option>
+                                    <option value="15">Preta</option>
+                                    <option value="16">Preta Decidida</option>
                                 </select>
                             </div>
                         </div>
@@ -102,6 +102,7 @@ $alunoExperimental = new alunoExperimental();
     <script>
         $(document).ready(function(){
             $('#telefone').mask('(00) 00000-0000');
+            $('#cpf').mask('000.000.000-00');
         });
     </script>
 </html>

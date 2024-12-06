@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dados = $_POST;
 
     $dados["telefone"] = limpa_texto($dados["telefone"]);
+    $dados["data"] = date('Y-m-d', strtotime($dados["data"]));
 
     if(empty($dados["nome"]) || empty($dados["idade"]) || empty($dados["nivel"]) || empty($dados["data"]) || empty($dados["hora"]) || empty($dados["telefone"])) {
         echo "<script>alert('Por favor, preencha todos os campos.'); window.location.href = 'experimental.php';</script>";
@@ -20,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die();
     }
 
-    $dados["data"] = implode('-', array_reverse(explode('/', $dados["data"])));
     $aluno->addExperimental($dados);
     header("Location: experimental.php");
    
