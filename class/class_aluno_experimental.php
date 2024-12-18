@@ -24,7 +24,7 @@ class alunoExperimental{
     function getExperimental() {
         global $mysqli;
         
-        $stmt = $mysqli->prepare("SELECT nome, idade, nivel, data, hora, telefone FROM aluno_experimental WHERE data > CURDATE() ORDER BY data ASC");
+        $stmt = $mysqli->prepare("SELECT nome, idade, nivel, data, hora, telefone FROM aluno_experimental WHERE data >= CURDATE() ORDER BY data ASC");
         if ($stmt === false) {
             die($mysqli->error);
         }

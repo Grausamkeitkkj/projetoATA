@@ -41,3 +41,30 @@ CREATE TABLE IF NOT EXISTS aluno_aula (
     FOREIGN KEY (id_aluno) REFERENCES aluno(id),
     FOREIGN KEY (id_aula) REFERENCES aula(id)
 );
+
+CREATE TABLE IF NOT EXISTS faixas (
+    id INT PRIMARY KEY,
+    cor VARCHAR(50) NOT NULL
+);
+
+INSERT INTO faixas (id, cor) VALUES
+(1, 'Branca'),
+(2, 'Branca Decidida'),
+(3, 'Laranja'),
+(4, 'Laranja Decidida'),
+(5, 'Amarela'),
+(6, 'Amarela Decidida'),
+(7, 'Camuflada'),
+(8, 'Camuflada Decidida'),
+(9, 'Verde'),
+(10, 'Verde Decidida'),
+(11, 'Roxa'),
+(12, 'Roxa Decidida'),
+(13, 'Azul'),
+(14, 'Azul Decidida'),
+(15, 'Marrom'),
+(16, 'Marrom Decidida'),
+(17, 'Vermelha'),
+(18, 'Vermelha Recomendada'),
+(19, 'Vermelha e Preta'),
+(20, 'Preta');

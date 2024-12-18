@@ -4,13 +4,8 @@ require_once('./conexao/conexao.php');
 
 class Aluno{
 
-    function addAluno($dados){
+    function addAluno($dados) {
         global $mysqli;
-
-        #echo "<pre>";
-        #print_r($dados);
-        #echo "</pre>";
-        #die();
 
         $stmt = $mysqli->prepare("INSERT INTO aluno (nome, idade, telefone, cpf, data_inscricao, faixa, observacoes_medicas, endereco) VALUES (?, ?, ?, ?, NOW(), ?, ?, ?)");
         if ($stmt === false) {
@@ -24,5 +19,72 @@ class Aluno{
         }
 
         $stmt->close();
+    }
+
+    function getAluno() {
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("
+            SELECT 
+                a.nome, 
+                TIMESTAMPDIFF(YEAR, a.idade, CURDATE()) AS idade, 
+                a.telefone, 
+                a.cpf, 
+                a.data_inscricao, 
+                b.cor AS faixa, 
+                a.observacoes_medicas, 
+                a.endereco 
+            FROM 
+                aluno a
+            LEFT JOIN 
+                faixas b ON a.faixa = b.id;
+        ");
+        if ($stmt === false) {
+            die($mysqli->error);
+        }
+
+        if (!$stmt->execute()) {
+            die($stmt->error);
+        }
+
+        $result = $stmt->get_result();
+        $stmt->close();
+        return $result;
+    }
+    
+    function getAlunoByNome($nome) {
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("
+            SELECT 
+                a.nome, 
+                TIMESTAMPDIFF(YEAR, a.idade, CURDATE()) AS idade, 
+                a.telefone, 
+                a.cpf, 
+                a.data_inscricao, 
+                b.cor AS faixa, 
+                a.observacoes_medicas, 
+                a.endereco 
+            FROM 
+                aluno a
+            LEFT JOIN 
+                faixas b ON a.faixa = b.id
+            WHERE 
+                a.nome LIKE ?
+        ");
+        if ($stmt === false) {
+            die($mysqli->error);
+        }
+
+        $nome = "%$nome%";
+        $stmt->bind_param('s', $nome);
+
+        if (!$stmt->execute()) {
+            die($stmt->error);
+        }
+
+        $result = $stmt->get_result();
+        $stmt->close();
+        return $result;
     }
 }

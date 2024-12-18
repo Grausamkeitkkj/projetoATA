@@ -6,15 +6,15 @@
             <ul class="submenu-items">
                 <li><a href="experimental.php">Experimental</a></li>
                 <li><a href="aula.php">Aula</a></li>
-                <li><a href="aluno.php">Aluno</a></li>
+                <li><a href="aluno_cadastro.php">Aluno</a></li>
                 <li><a href="#">Professor</a></li>
                 <li><a href="#">Responsável</a></li>
             </ul>
         </li>
         <li class="submenu">
-            <a href="#">Serviços</a>
+            <a href="#">Pesquisa</a>
             <ul class="submenu-items">
-                <li><a href="#">Consultoria</a></li>
+                <li><a href="aluno_pesquisa.php">Aluno</a></li>
                 <li><a href="#">Desenvolvimento</a></li>
             </ul>
         </li>

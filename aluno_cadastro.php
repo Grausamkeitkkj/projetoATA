@@ -1,7 +1,6 @@
 <?php
 require_once("funcoes_uteis.php");
 require_once("form_experimental.php");
-$alunoExperimental = new alunoExperimental();
 ?>
 
 <!DOCTYPE html>
@@ -9,13 +8,13 @@ $alunoExperimental = new alunoExperimental();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <title>Document</title>
 </head>
 <body>
+<?php require_once("menu.php"); ?>
 <div class="main-content">
-    <?php require_once("menu.php"); ?>
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing container-fluid">
         <div class="box-shadow">
             <div class="row">
@@ -53,20 +52,24 @@ $alunoExperimental = new alunoExperimental();
                                     <option value="">Selecione a faixa</option>
                                     <option value="1">Branca</option>
                                     <option value="2">Branca Decidida</option>
-                                    <option value="3">Amarela</option>
-                                    <option value="4">Amarela Decidida</option>
-                                    <option value="5">Laranja</option>
-                                    <option value="6">Laranja Decidida</option>
-                                    <option value="7">Verde</option>
-                                    <option value="8">Verde Decidida</option>
-                                    <option value="9">Azul</option>
-                                    <option value="10">Azul Decidida</option>
+                                    <option value="3">Laranja</option>
+                                    <option value="4">Laranja Decidida</option>
+                                    <option value="5">Amarela</option>
+                                    <option value="6">Amarela Decidida</option>
+                                    <option value="7">Camuflada</option>
+                                    <option value="8">Camuflada Decidida</option>
+                                    <option value="9">Verde</option>
+                                    <option value="10">Verde Decidida</option>
                                     <option value="11">Roxa</option>
                                     <option value="12">Roxa Decidida</option>
-                                    <option value="13">Marrom</option>
-                                    <option value="14">Marrom Decidida</option>
-                                    <option value="15">Preta</option>
-                                    <option value="16">Preta Decidida</option>
+                                    <option value="13">Azul</option>
+                                    <option value="14">Azul Decidida</option>
+                                    <option value="15">Marrom</option>
+                                    <option value="16">Marrom Decidida</option>
+                                    <option value="17">Vermelha</option>
+                                    <option value="18">Vermelha Recomendada</option>
+                                    <option value="19">Vermelha e Preta</option>
+                                    <option value="20">Preta</option>
                                 </select>
                             </div>
                         </div>

@@ -9,9 +9,6 @@ $resultAluno = $alunoExperimental->getExperimental();
 
 $aula = new aula();
 $resultAula = $aula->getAulaHoje();
-
-
-
 ?>
 
 <!DOCTYPE html>

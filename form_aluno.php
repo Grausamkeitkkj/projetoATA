@@ -18,6 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     $aluno->addAluno($dados);
-    header("Location: aluno.php");
+    header("Location: aluno_cadastro.php");
     exit();
 }
