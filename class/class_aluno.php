@@ -7,7 +7,17 @@ class Aluno{
     function addAluno($dados) {
         global $mysqli;
 
-        $stmt = $mysqli->prepare("INSERT INTO aluno (nome, idade, telefone, cpf, data_inscricao, faixa, observacoes_medicas, endereco) VALUES (?, ?, ?, ?, NOW(), ?, ?, ?)");
+        $stmt = $mysqli->prepare("
+            INSERT INTO aluno 
+                (nome, 
+                idade, 
+                telefone, 
+                cpf, 
+                data_inscricao, 
+                faixa, 
+                observacoes_medicas, 
+                endereco) 
+            VALUES (?, ?, ?, ?, NOW(), ?, ?, ?)");
         if ($stmt === false) {
             die($mysqli->error);
         }
@@ -26,6 +36,7 @@ class Aluno{
 
         $stmt = $mysqli->prepare("
             SELECT 
+                a.id,
                 a.nome, 
                 TIMESTAMPDIFF(YEAR, a.idade, CURDATE()) AS idade, 
                 a.telefone, 
@@ -57,6 +68,7 @@ class Aluno{
 
         $stmt = $mysqli->prepare("
             SELECT 
+                a.id,
                 a.nome, 
                 TIMESTAMPDIFF(YEAR, a.idade, CURDATE()) AS idade, 
                 a.telefone, 
@@ -86,5 +98,28 @@ class Aluno{
         $result = $stmt->get_result();
         $stmt->close();
         return $result;
+    }
+
+    function marcaPresencaAluno($dados){
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("
+            INSERT INTO presenca_aluno
+                (id_aluno,
+                contagem_presenca)
+            VALUES (?, ?)");
+
+        if ($stmt === false){
+            die($mysqli->error);
+        }
+
+        $stmt->bind_param('ii', $dados['id_aluno'], $dados['contagem_presenca']);
+
+        if (!$stmt->execute()){
+            die($stmt->error);
+        }
+
+        $stmt->close();
+
     }
 }
