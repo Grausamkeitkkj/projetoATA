@@ -5,10 +5,7 @@ require_once("funcoes_uteis.php");
 
 $aluno = new Aluno();
 
-
 $pesquisaAluno = $aluno->getAluno();
-
-if
 
 ?>
 
@@ -30,7 +27,7 @@ if
             <form class="form-pesquisa-aluno" action="">
                 <div class="form-group">
                     <label for="nome" class="form-label">Nome do aluno</label>
-                    <input type="text" id="nome" name="nome" placeholder="Nome do aluno" class="form-input" required>
+                    <input type="text" id="nome" name="nome" placeholder="Nome do aluno" class="form-input">
                     <button type="submit" class="btn btn-primary">Pesquisar</button>
                 </div>
             </form>
@@ -58,42 +55,45 @@ if
                     <div id="selected-names" class="form-input" readonly></div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-padding-bottom">Salvar Presenças</button>
-                <button type="reset" class="btn btn-danger btn-padding-bottom">Reiniciar tabela</button>
             </form>
         </div>
     </div>
     <script>
     document.addEventListener('DOMContentLoaded', function() { // Quando a página carregar
-        const selectedNamesContainer = document.getElementById('selected-names'); // Seleciona o campo de nomes selecionados
+        const campoNomesSelecionados = document.getElementById('selected-names'); // Seleciona o campo de nomes selecionados
 
-        function updateSelectedNames() {
+        function atualizarNomesSelecionados() {
             const checkboxes = document.querySelectorAll('.checkbox-presenca'); // Seleciona todas as checkboxes 
-            const selectedNames = Array.from(checkboxes) // Converte as checkboxes em um array
-                .filter(checkbox => checkbox.checked) // Filtra as checkboxes que estão marcadas
+            const checkboxesArray = Array.from(checkboxes) // Converte as checkboxes em um array
                 .map(checkbox => {
-                    const name = checkbox.closest('tr').querySelector('.nome-aluno').textContent; // Procura o nome do aluno mais próximo da checkbox
-                    return { id: checkbox.value, name }; // Retorna um objeto com o id e o nome do aluno
+                    const nome = checkbox.closest('tr').querySelector('.nome-aluno').textContent; // Procura o nome do aluno mais próximo da checkbox
+                    return { id: checkbox.value, nome, checked: checkbox.checked }; // Retorna um objeto com o id, nome e estado da checkbox
                 });
 
-            selectedNames.forEach(item => {
-                const existingNameElement = selectedNamesContainer.querySelector(`span[data-id="${item.id}"]`); // Procura um elemento span com o id do aluno
-                if (!existingNameElement) {
-                    const nameElement = document.createElement('span'); // Cria um elemento span
-                    nameElement.textContent = item.name; // Adiciona o nome do aluno ao elemento span
-                    nameElement.classList.add('selected-name'); // Adiciona a classe selected-name ao elemento span
-                    nameElement.setAttribute('data-id', item.id); // Adiciona um atributo data-id com o id do aluno
+            checkboxesArray.forEach(item => {
+                const nomeExistente = campoNomesSelecionados.querySelector(`span[data-id="${item.id}"]`);             
 
-                    const removeButton = document.createElement('button'); // Cria um elemento button
-                    removeButton.textContent = 'X'; // Adiciona o texto X ao botão
-                    removeButton.classList.add('remove-button'); // Adiciona a classe remove-button ao botão
-                    removeButton.addEventListener('click', function() { // Adiciona um evento de clique ao botão
+                if (item.checked && !nomeExistente) { // Adiciona o nome se a checkbox estiver marcada e o nome não estiver na lista
+                    const nomeElemento = document.createElement('span'); // Cria um elemento span
+                    nomeElemento.textContent = item.nome; // Adiciona o nome do aluno ao elemento span
+                    nomeElemento.classList.add('selected-name'); // Adiciona a classe selected-name ao elemento span
+                    nomeElemento.setAttribute('data-id', item.id); // Adiciona um atributo data-id com o id do aluno
+                    // <span class="selected-name" data-id="item.id">item.nome</span>
+
+                    const botaoRemover = document.createElement('button'); // Cria um elemento button
+                    botaoRemover.textContent = 'X'; // Adiciona o texto X ao botão
+                    botaoRemover.classList.add('remove-button'); // Adiciona a classe remove-button ao botão
+                    botaoRemover.addEventListener('click', function() { // Adiciona um evento de clique ao botão
                         const checkbox = document.querySelector(`input[value="${item.id}"]`); // Procura a checkbox com o id do aluno
                         checkbox.checked = false; // Desmarca a checkbox
-                        updateSelectedNames(); // Atualiza os nomes selecionados
+                        atualizarNomesSelecionados(); // Atualiza os nomes selecionados
                     });
 
-                    nameElement.appendChild(removeButton); // Adiciona o botão de remoção ao elemento span
-                    selectedNamesContainer.appendChild(nameElement); // Adiciona o elemento span ao campo de nomes selecionados
+                    nomeElemento.appendChild(botaoRemover); // Adiciona o botão de remoção ao elemento span
+                    campoNomesSelecionados.appendChild(nomeElemento); // Adiciona o elemento span ao campo de nomes selecionados
+                } else if (!item.checked && nomeExistente) {
+                    // Remove o nome se a checkbox estiver desmarcada e o nome estiver na lista
+                    nomeExistente.remove();
                 }
             });
         }
@@ -101,7 +101,7 @@ if
         // Delegação de eventos para checkboxes adicionadas dinamicamente
         document.addEventListener('change', function(event) {
             if (event.target.classList.contains('checkbox-presenca')) {
-                updateSelectedNames();
+                atualizarNomesSelecionados();
             }
         });
     });
@@ -130,7 +130,7 @@ if
                     });
 
                     // Atualiza os nomes selecionados após adicionar novas linhas
-                    updateSelectedNames();
+                    atualizarNomesSelecionados();
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     console.error('Erro ao pesquisar alunos:', textStatus, errorThrown);
