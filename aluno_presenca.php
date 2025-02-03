@@ -31,7 +31,7 @@ $pesquisaAluno = $aluno->getAluno();
                     <button type="submit" class="btn btn-primary">Pesquisar</button>
                 </div>
             </form>
-            <form method="post" action="processa_aluno_presenca.php">
+            <form method="post" action="form_aluno_presenca.php">
                 <table class="table table-striped table-bordered">
                     <thead class="table-header-blue">
                         <tr>
@@ -51,8 +51,10 @@ $pesquisaAluno = $aluno->getAluno();
                     </tbody>
                 </table>
                 <div class="form-group">
+                    <label for="contagem-Presenca" class="form-label">Contagem de Presença</label>
+                    <input type="number" id="contagem-Presenca" name="contagemPresenca" placeholder="Contagem de Presença" class="form-input col-2" value="1">
                     <label for="selected-names" class="form-label">Nomes Selecionados</label>
-                    <div id="selected-names" class="form-input" readonly></div>
+                    <div type="text" id="selected-names" class="form-input col-6" readonly></div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-padding-bottom">Salvar Presenças</button>
             </form>

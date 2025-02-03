@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS aluno (
 
 CREATE TABLE IF NOT EXISTS contagem_presenca (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_aluno INT NOT NULL,
+    id_aluno INT NOT NULL UNIQUE,
     contagem_presenca INT,
     FOREIGN KEY (id_aluno) REFERENCES aluno(id)
 );

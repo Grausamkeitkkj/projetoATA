@@ -100,26 +100,59 @@ class Aluno{
         return $result;
     }
 
-    function marcaPresencaAluno($dados){
+    function getPresencaAluno($dados){
         global $mysqli;
 
         $stmt = $mysqli->prepare("
-            INSERT INTO presenca_aluno
-                (id_aluno,
-                contagem_presenca)
-            VALUES (?, ?)");
+            SELECT 
+                contagem_presenca
+            FROM 
+                contagem_presenca
+            WHERE 
+                id_aluno = ?
+        ");
+        if ($stmt === false) {
+            die($mysqli->error);
+        }
+
+        $stmt->bind_param('i', $dados['id_aluno']);
+
+        if (!$stmt->execute()) {
+            die($stmt->error);
+        }
+
+        $result = $stmt->get_result();
+
+        $stmt->close();
+        
+        if ($row = $result->fetch_assoc()) {
+            return $row['contagem_presenca'];
+        } else {
+            return 0;
+        }
+    }
+
+    function setPresencaAluno($id, $contador){
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("
+            INSERT INTO contagem_presenca (id_aluno, contagem_presenca)
+            VALUES (?, ?)
+            ON DUPLICATE KEY UPDATE
+            contagem_presenca = contagem_presenca + VALUES(contagem_presenca)
+        ");
 
         if ($stmt === false){
             die($mysqli->error);
         }
 
-        $stmt->bind_param('ii', $dados['id_aluno'], $dados['contagem_presenca']);
+        $stmt->bind_param('ii', $id, $contador);
 
         if (!$stmt->execute()){
             die($stmt->error);
         }
 
         $stmt->close();
-
     }
+
 }
